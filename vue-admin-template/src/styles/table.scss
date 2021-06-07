@@ -1,0 +1,26 @@
+/* 去除el-table 边框 */
+.my_table > > > .el-table__row > td {
+  /* 去除表格线 */
+  border: none;
+}
+
+.my_table > > > .el-table th.is-leaf {
+  /* 去除上边框 */
+  border: none;
+}
+
+/* 表格-卡片 样式 */
+.wrapper-padding {
+  padding: 20px 0 0 20px;
+
+  .list-card {
+    width: 98%;
+    margin: 20px auto;
+    border: none;
+  }
+
+  .list-btn {
+    width: 97%;
+  }
+}
+

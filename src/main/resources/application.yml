@@ -1,0 +1,39 @@
+server:
+  port: 9527
+  servlet:
+    context-path: /template
+spring:
+  datasource:
+    url: jdbc:oracle:thin:@127.0.0.1:1521/helowin
+    username: TYYY
+    password: TYYY
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    type: com.zaxxer.hikari.HikariDataSource
+    initialization-mode: always
+    continue-on-error: true
+    hikari:
+      minimum-idle: 5
+      connection-test-query: select 1 from dual
+      maximum-pool-size: 20
+      auto-commit: true
+      idle-timeout: 30000
+      pool-name: TemplateHikariCP
+      max-lifetime: 60000
+      connection-timeout: 30000
+  jpa:
+    hibernate:
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyLegacyJpaImpl
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.Oracle10gDialect
+        format_sql: true
+    show-sql: true
+    database: oracle
+logging:
+  level:
+    root: info
+    com.github: info
+  config: classpath:logback-spring.xml
